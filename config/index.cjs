@@ -44,19 +44,19 @@ const USER_CONFIG = {
     CIBA: true,
     
     // 每日一言, 填 false 则不使用，按需关闭不使用的功能可以提高运行速度
-    oneTalk: true,
+    oneTalk: false,
     
     // 土味情话(彩虹屁), 填 false 则不使用，按需关闭不使用的功能可以提高运行速度
-    earthyLoveWords: true,
+    earthyLoveWords: false,
     
     // 朋友圈文案, 填 false 则不使用，按需关闭不使用的功能可以提高运行速度
-    momentCopyrighting: true,
+    momentCopyrighting: false,
     
     // 毒鸡汤, 填 false 则不使用，按需关闭不使用的功能可以提高运行速度
-    poisonChickenSoup: true,
+    poisonChickenSoup: false,
     
     // 古诗古文, 填 false 则不使用，按需关闭不使用的功能可以提高运行速度
-    poetry: true,
+    poetry: false,
 
     /** 星座运势 */
     // 填 false 则不使用，按需关闭不使用的功能可以提高运行速度
@@ -68,19 +68,27 @@ const USER_CONFIG = {
   
     /** 学生课表 */
     // 填 false 则不使用，按需关闭不使用的功能可以提高运行速度
-    courseSchedule: true,
+    courseSchedule: false,
   },
   
   TIAN_API: {
     // 天行API KEY，如果使用天行API则需要填写此项
-    key: '',
+    key: 'ea3e940d45cc9f2b7db5bd0c842666cc',
     
     /** 天行API相关，需要config中配置 TIAN_API_KEY  */
+    weather:tian_api_weather_weather_0,
+    min_temperature:tian_api_weather_lowest_0,
+    max_temperature:tian_api_weather_highest_0,
+    wind_scale:tian_api_weather_windsc_0,
+    wind_direction:tian_api_weather_wind_0,
+    shidu:tian_api_weather_humidity_0,
+    notice:tian_api_weather_tips_0,
+    
     // 早安心语, 填 false 则不使用，按需关闭不使用的功能可以提高运行速度
     morningGreeting: true,
   
     // 晚安心语, 填 false 则不使用，按需关闭不使用的功能可以提高运行速度
-    eveningGreeting: true,
+    eveningGreeting: false,
   
     // 天行天气（展示未来N天，最多7天）, 填 0 则不使用，按需关闭不使用的功能可以提高运行速度
     weather: 3,
@@ -108,7 +116,7 @@ const USER_CONFIG = {
   USERS: [
     {
       // 想要发送的人的名字
-      name: '老婆0',
+      name: '',
       // 使用微信测试号：扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
       // 使用其他通道时，请严格按照各个通道的教程进行填写
       id: '',
@@ -116,11 +124,11 @@ const USER_CONFIG = {
       // 使用其他通道时，请填写 config/template-config.cjs 中某个想要使用的模板的id
       useTemplateId: '',
       // 所在省份或城市，也可以不填
-      province: '惠州',
+      province: '',
       // 所在城市或县区
-      city: '惠阳',
+      city: '',
       // 新历生日, 仅用作获取星座运势, 格式必须
-      horoscopeDate: '12-27',
+      horoscopeDate: '',
       // 获取什么时候的星座运势，可选：['今日', '明日', '本周', '本月', '今年'], 留空则随机
       horoscopeDateType: '今日',
       // 他点击详情后跳转的页面,你可以设置成微博的热榜，也可以设置成其他，网址一定要填对；不填对也没关系，随便你，会打不开而已。
@@ -144,121 +152,8 @@ const USER_CONFIG = {
       ],
       // 专属纪念日/倒数日，如果你在这里填写了纪念日/倒数日，就不会计算CUSTOMIZED_DATE_LIST的日子了, 和CUSTOMIZED_DATE_LIST的配置方法相同，可以往下查看，我这里就不重复写了
       customizedDateList: [
-        // 在一起的日子
-        { keyword: 'love_day', date: '2022-09-08' },
-        // 结婚纪念日
-        { keyword: 'marry_day', date: '2022-09-09' },
-        // 退伍日
-        { keyword: 'ex_day', date: '2022-09-10' }
       ],
-      // 课程表相关配置
-      // 如果courseSchedule不存在或者为空（null）则认为没有课程
-      // 如果courseSchedule是一个数组，则认为不区分单双周，直接填写星期几对应的课表数据即可
-      // 如果courseSchedule是一个对象（如下面所示）
-      courseSchedule: {
-        // 单双周的基准
-        benchmark: {
-          // 这里设置一个日期，用来作为判断课表是否单双周的依据
-          date: '2022-09-23',
-          // 该日期是否为单周
-          isOdd: true
-        },
-        // 课表
-        courses: {
-          // 单周课表
-          // 从星期一到星期日（星期六和星期日的课表数组可不填写）
-          odd: [
-            // 例子，周一的课表
-            [
-              '08:00-09:35 高等数学',
-              '09:50-11:25 高等物理'
-            ],
-            // 周二
-            [
-              '08:00-09:35 高等数学',
-              '09:50-11:25 高等物理'
-            ],
-            // 周三
-            [
-              '08:00-09:35 高等数学',
-              '09:50-11:25 高等物理'
-            ],
-            // 周四
-            [
-              '08:00-09:35 高等数学',
-              '09:50-11:25 高等物理'
-            ],
-            // 周五
-            [
-              '08:00-09:35 高等数学',
-              '09:50-11:25 高等物理'
-            ],
-            // 周六
-            [
-              '08:00-09:35 高等数学',
-              '09:50-11:25 高等物理'
-            ],
-            // 周日
-            [
-              '08:00-09:35 高等数学',
-              '09:50-11:25 高等物理'
-            ]
-          ],
-          // 双周课表
-          even: [
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-            []
-          ]
-        }
-      },
-    },
-    {
-      name: '老婆1',
-      id: '',
-      useTemplateId: '',
-      province: '',
-      city: '',
-      horoscopeDate: '',
-      horoscopeDateType: '',
-      openUrl: 'https://wangxinleo.cn',
-      festivals: [],
-      customizedDateList: [],
-      courseSchedule: null
-    },
-    {
-      name: '老婆2',
-      id: '',
-      useTemplateId: '',
-      province: '',
-      city: '',
-      horoscopeDate: '',
-      horoscopeDateType: '',
-      openUrl: 'https://wangxinleo.cn',
-      festivals: [],
-      customizedDateList: [],
-      courseSchedule: null
-    },
-    {
-      name: '老婆3',
-      id: '',
-      useTemplateId: '',
-      province: '',
-      city: '',
-      horoscopeDate: '',
-      horoscopeDateType: '',
-      openUrl: 'https://wangxinleo.cn',
-      festivals: [],
-      customizedDateList: [],
-      courseSchedule: null
-    }
-    // 你可以不断按格式往下增加
-    // ...
-  ],
+     ],
 
   /**
    * 【推送完成提醒】 相关，主要用来展示发送是否成功/失败的数据
@@ -353,14 +248,6 @@ const USER_CONFIG = {
    * 比如：keyword: "love_date" ，在测试号中就是 {{ love_date.DATA }}
    * */
   CUSTOMIZED_DATE_LIST: [
-    // 在一起的日子
-    { keyword: 'love_day', date: '2022-09-08' },
-    // 结婚纪念日
-    { keyword: 'marry_day', date: '2022-09-09' },
-    // 退伍日
-    { keyword: 'ex_day', date: '2022-09-10' }
-    // 你可以不断按格式往下增加
-    // ...
   ],
   
   // 默认的课表配置
@@ -374,15 +261,12 @@ const USER_CONFIG = {
    * */
   SLOT_LIST: [
     // 这样配置的话，就会每次发送这句话
-    { keyword: 'encourage_oneself', contents: '你主要的问题在于读书太少而想得太多' },
+    { keyword: ', contents: '' },
     // 这样配置的话，就会每次随机选一句话发送
     {
-      keyword: 'lover_prattle',
+      keyword: '',
       contents: [
-        '因为太喜欢你，所以看谁都像是情敌。',
-        '申请成为你爱里的永久居民。',
-        '你很傻，你很笨，可我还是很羡慕你，因为你有我',
-        '遇见你，就好像捡到了100斤的运气'
+        '',
       ],
     }
     // 你可以不断按格式往下增加
