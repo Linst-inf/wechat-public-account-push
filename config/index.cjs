@@ -15,7 +15,10 @@ const USER_CONFIG = {
 
   PROVINCE: '广东',
   CITY: '惠州',
-
+  TIAN_API: {
+    // 天行API KEY，如果使用天行API则需要填写此项
+    key: 'ea3e940d45cc9f2b7db5bd0c842666cc',
+  },
   USERS: [
     {
       // 想要发送的人的名字
