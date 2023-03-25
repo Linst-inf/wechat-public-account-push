@@ -18,6 +18,7 @@ const USER_CONFIG = {
   TIAN_API: {
     // 天行API KEY，如果使用天行API则需要填写此项
     key: 'ea3e940d45cc9f2b7db5bd0c842666cc',
+    weather：tian_api_weather_weather_0，
   },
   USERS: [
     {
