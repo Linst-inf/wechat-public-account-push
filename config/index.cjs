@@ -15,22 +15,7 @@ const USER_CONFIG = {
 
   PROVINCE: '广东',
   CITY: '惠州',
-    TIAN_API: {
-    // 天行API KEY，如果使用天行API则需要填写此项
-    key: 'ea3e940d45cc9f2b7db5bd0c842666cc',
-      /** 天行API相关，需要config中配置 TIAN_API_KEY  */
-    // 早安心语, 填 false 则不使用，按需关闭不使用的功能可以提高运行速度
-    morningGreeting: true,
-  
-    // 晚安心语, 填 false 则不使用，按需关闭不使用的功能可以提高运行速度
-    eveningGreeting: false,
-  
-    // 天行天气（展示未来N天，最多7天）, 填 0 则不使用，按需关闭不使用的功能可以提高运行速度
-    weather: 1,
-  
-    // 全网热搜榜（展示N条，最多30条）, 填 0 则不使用，按需关闭不使用的功能可以提高运行速度
-    networkHot: 0,
-  },
+ 
   USERS: [
     {
       // 想要发送的人的名字
